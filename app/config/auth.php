@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'eloquent',
+	'driver' => 'ldap',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -27,8 +27,8 @@ return array(
 	| is often just the "User" model but you may use whatever you like.
 	|
 	*/
-
-	'model' => 'User',
+    'username_field' => 'username',
+	#'model' => 'User',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return array(
 	|
 	*/
 
-	'table' => 'users',
+	#'table' => 'users',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -67,5 +67,11 @@ return array(
 		'expire' => 60,
 
 	),
+    //'CN=eteng.busyunit,OU=ProjectN,DC=nubeslab,DC=com',
+    //OU=ProjectN,DC=nubeslab,DC=com
+    #'ldap_tree' => 'OU=User,DC=bus,DC=com',
+    'ldap_tree' => 'OU=ProjectN,DC=nubeslab,DC=com',
+    'ldap_server' => '138.91.41.100',
+
 
 );

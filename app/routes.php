@@ -11,8 +11,12 @@
 |
 */
 
+Route::controller('users', 'UsersController');
+
+
 Route::get('/', function()
 {
+
 	return View::make('hello');
 });
 
@@ -24,7 +28,9 @@ Route::get('api',function(){
 	return "yesso Api Service..";
 });
 
-Route::group(array('prefix'=>'api/v1','before'=>'auth.basic'),function(){
+Route::group(array('prefix'=>'api/v1','before'=>'auth'),function(){
     Route::resource('user', 'user');
     route::resource('project','project');
 });
+
+
