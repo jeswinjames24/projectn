@@ -1,4 +1,4 @@
 @extends('layouts.main')
 @section('content')
-	i am the home page
+   <h1>Hello, {{ Session::get('success') }}?></h1>
 @stop
