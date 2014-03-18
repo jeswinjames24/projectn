@@ -84,12 +84,14 @@ class UsersController extends \BaseController {
     public function getLogin() {
         $this->layout->content = View::make('users.login');
     }
+    public function getDashboard() {
+        $this->layout->content = View::make('users.dashboard');
+    }
     public function postSignin() {
         //Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))
         ;
         if (Auth::attempt(array('username'=>'eteng', 'email'=>'eteng@nubeslab.com','password'=>'Abcd1234'))) {
             return Redirect::to('users/hello')->with('message', 'You are now logged in!');
-
         } else {
             return Redirect::to('users/login')
                 ->with('message', 'Your username/password combination was incorrect')
