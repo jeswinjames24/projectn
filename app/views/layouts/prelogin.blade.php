@@ -20,8 +20,14 @@
 			</div>
 
     <div class="content">
-									@yield('content')
-								</div>
+       <div class="container">
+        @if(Session::has('message'))
+        <p class="alert">{{ Session::get('message') }}</p>
+        @endif
+        {{ $content }}
+      </div>
+	    @yield('content')
+	  </div>
     <script>
 			jQuery(document).ready(function() {
 				Main.init();
