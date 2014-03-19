@@ -9,17 +9,17 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-
-		<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/fonts/style.css">
-		<link rel="stylesheet" href="assets/css/main.css">
-		<link rel="stylesheet" href="assets/css/main-responsive.css">
-		<link rel="stylesheet" href="assets/plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-		<link rel="stylesheet" href="assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-		<link rel="stylesheet" href="assets/css/theme_light.css" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="assets/css/print.css" type="text/css" media="print"/>
+ href="{{ URL::asset('css/style.min.css') }}"
+		<link rel="stylesheet" href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/plugins/font-awesome/css/font-awesome.min.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/fonts/style.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/css/main.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/css/main-responsive.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/plugins/iCheck/skins/all.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/css/theme_light.css') }}" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="{{ URL::asset('assets/css/print.css') }}" type="text/css" media="print"/>
 		<!--[if IE 7]>
 		<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
