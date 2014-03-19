@@ -90,7 +90,7 @@ class UsersController extends \BaseController {
     public function postSignin() {
         //Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))
         ;
-        if (Auth::attempt(array('username'=>'eteng', 'email'=>'eteng@nubeslab.com','password'=>'Abcd1234'))) {
+        if (Auth::attempt(array('username'=>'eteng', 'email'=>Input::get('email'),'password'=>Input::get('password')))) {
             return Redirect::to('users/dashboard')->with('message', 'You are now logged in!');
         } else {
             return Redirect::to('users/login')
