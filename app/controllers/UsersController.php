@@ -2,7 +2,7 @@
 
 class UsersController extends \BaseController {
 
-    protected $layout = "layouts.main";
+    protected $layout = "layouts.prelogin";
 
 	/**
 	 * Display a listing of the resource.
