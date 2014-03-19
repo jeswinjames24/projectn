@@ -9,7 +9,6 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
- href="{{ URL::asset('css/style.min.css') }}"
 		<link rel="stylesheet" href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
 		<link rel="stylesheet" href="{{ URL::asset('assets/plugins/font-awesome/css/font-awesome.min.css') }}">
 		<link rel="stylesheet" href="{{ URL::asset('assets/fonts/style.css') }}">
