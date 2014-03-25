@@ -42,4 +42,5 @@
         {{ Form::close() }}
 			</div>
 			<!-- end: LOGIN BOX -->
+        
 @stop

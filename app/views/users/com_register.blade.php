@@ -12,32 +12,20 @@
 					</div>
 					<fieldset>
 						<div class="form-group">
-							<input type="text" class="form-control" name="full_name" placeholder="Full Name">
+							<input type="text" class="form-control" name="first_name" placeholder="First Name">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="address" placeholder="Address">
+							<input type="text" class="form-control" name="last_name" placeholder="Last Name">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="city" placeholder="City">
-						</div>
-						<div class="form-group">
-							<div>
-								<label class="radio-inline">
-									<input type="radio" class="grey" value="F" name="gender">
-									Female
-								</label>
-								<label class="radio-inline">
-									<input type="radio" class="grey" value="M" name="gender">
-									Male
-								</label>
-							</div>
+							<input type="text" class="form-control" name="company_domain" placeholder="Company Domain Name (ex. www.abc.com)">
 						</div>
 						<p>
 							Enter your account details below:
 						</p>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="email" class="form-control" name="email" placeholder="Email">
+								<input type="email" class="form-control" name="company_email" placeholder="Email (ex. you@yourcompanymail.com)">
 								<i class="fa fa-envelope"></i> </span>
 						</div>
 						<div class="form-group">

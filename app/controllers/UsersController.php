@@ -80,6 +80,28 @@ class UsersController extends \BaseController {
     public function getRegister() {
         $this->layout->content = View::make('users.register');
     }
+    public function getCom_register() {
+     $ds = ldap_connect('ldap://138.91.41.100:389');
+		  if ($ds) {
+    // bind with appropriate dn to give update access
+    $r = ldap_bind( $ds, 'nubesadmin@nubeslab.com', 'Nub3s@dmin');
+
+    // prepare data
+    $info["OU"] = "Test OU";
+    $info["DC"] = "nubeslab";
+    $info["DC"] = "com";
+
+    // add data to directory
+    $r = ldap_add($ds, "cn=TestUser", $info);
+
+    ldap_close($ds);
+    } else {
+      echo "Unable to connect to LDAP server";
+      }
+    }
+    public function postCom_register() {
+        $this->layout->content = View::make('users.com_register');
+    }
 
     public function getLogin() {
         $this->layout->content = View::make('users.login');
@@ -88,8 +110,7 @@ class UsersController extends \BaseController {
         $this->layout->content = View::make('users.dashboard');
     }
     public function postSignin() {
-        //Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))
-        ;
+        //Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')));
         if (Auth::attempt(array('username'=>'eteng', 'email'=>Input::get('email'),'password'=>Input::get('password')))) {
             return Redirect::to('users/dashboard')->with('message', 'You are now logged in!');
         } else {
