@@ -80,7 +80,7 @@ class UsersController extends \BaseController {
     public function getRegister() {
         $this->layout->content = View::make('users.register');
     }
-    public function getCom_register() {
+    public function postCom_register() {
      $ds = ldap_connect('ldap://138.91.41.100:389');
 		  if ($ds) {
     // bind with appropriate dn to give update access
@@ -99,7 +99,7 @@ class UsersController extends \BaseController {
       echo "Unable to connect to LDAP server";
       }
     }
-    public function postCom_register() {
+    public function getCom_register() {
         $this->layout->content = View::make('users.com_register');
     }
 
