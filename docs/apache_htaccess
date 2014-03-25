@@ -1,0 +1,16 @@
+
+.htaccess with mod_rewrite
+
+This solution enables you to drop Laravel into your public folder then use a .htaccess file to redirect requests to the public folder. This solution places your application and core system code into a publicly accessible folder. This is not something that we encourage you to do with any PHP framework.
+
+Step 1. Place Laravel in your document root folder.
+
+Step 2. Place the following .htaccess file in your document root folder.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} !^public
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+Step 3. Make sure that you manually set your 'url' configuration in application/config/application.php otherwise Laravel will generate incorrect URLs. Make sure that each of your environments have the correct application.url configuration. For more information on environment-specific configurations see: http://laravel.com/docs/install#environments
+
