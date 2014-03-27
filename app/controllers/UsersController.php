@@ -80,26 +80,28 @@ class UsersController extends \BaseController {
     public function getRegister() {
         $this->layout->content = View::make('users.register');
     }
-    public function postCom_register() {
-     $ds = ldap_connect('ldap://138.91.41.100:389');
+    public function getCom_register() {
+     $ds = ldap_connect('ldap://10.4.3.4:389');
 		  if ($ds) {
     // bind with appropriate dn to give update access
-    $r = ldap_bind( $ds, 'nubesadmin@nubeslab.com', 'Nub3s@dmin');
+    $r = ldap_bind( $ds, 'nubesadmin@nubeslab.com', 'Nubes@dmin');
 
     // prepare data
-    $info["OU"] = "Test OU";
-    $info["DC"] = "nubeslab";
-    $info["DC"] = "com";
 
     // add data to directory
-    $r = ldap_add($ds, "cn=TestUser", $info);
+	// prepare data
+//    $info["OU"] = "TestingOU1";
+    $info["objectclass"] = "organizationalUnit";
+
+    // add data to directory
+    $r = ldap_add($ds, "OU=TestingOU1,DC=nubeslab,DC=com", $info);
 
     ldap_close($ds);
     } else {
       echo "Unable to connect to LDAP server";
       }
     }
-    public function getCom_register() {
+    public function getTempCom_register() {
         $this->layout->content = View::make('users.com_register');
     }
 
