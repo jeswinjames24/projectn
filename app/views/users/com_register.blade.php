@@ -6,36 +6,36 @@
 				<p>
 					Enter your personal details below:
 				</p>
-				<form class="form-register">
+        {{ Form::open(array('url'=>'users/com-register', 'class'=>'form-register')) }}
 					<div class="errorHandler alert alert-danger no-display">
 						<i class="fa fa-remove-sign"></i> You have some form errors. Please check below.
 					</div>
 					<fieldset>
 						<div class="form-group">
-							<input type="text" class="form-control" name="first_name" placeholder="First Name">
+              {{ Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'First Name', 'name'=>'first_name')) }}
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="last_name" placeholder="Last Name">
+							{{ Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'Last Name', 'name'=>'last_name')) }}
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="company_domain" placeholder="Company Domain Name (ex. www.abc.com)">
+              {{ Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'Company Domain Name (ex. www.abc.com)', 'name'=>'company_domain')) }}
 						</div>
 						<p>
 							Enter your account details below:
 						</p>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="email" class="form-control" name="company_email" placeholder="Email (ex. you@yourcompanymail.com)">
+                 {{ Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'Email (ex. you@yourcompanymail.com)', 'name'=>'company_email')) }}
 								<i class="fa fa-envelope"></i> </span>
 						</div>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                {{ Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'Password', 'name'=>'password')) }}
 								<i class="fa fa-lock"></i> </span>
 						</div>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="password" class="form-control" name="password_again" placeholder="Password Again">
+                 {{ Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'Password Again', 'name'=>'password_again')) }}
 								<i class="fa fa-lock"></i> </span>
 						</div>
 						<div class="form-group">
@@ -50,12 +50,10 @@
 							<a class="btn btn-light-grey go-back">
 								<i class="fa fa-circle-arrow-left"></i> Back
 							</a>
-							<button type="submit" class="btn btn-bricky pull-right">
-								Submit <i class="fa fa-arrow-circle-right"></i>
-							</button>
+							  {{ Form::submit('Submit', array('class'=>'btn btn-bricky pull-right'))}}	
 						</div>
 					</fieldset>
-				</form>
+			  {{ Form::close() }}
 			</div>
 			<!-- end: REGISTER BOX -->
 @stop

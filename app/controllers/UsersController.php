@@ -80,7 +80,7 @@ class UsersController extends \BaseController {
     public function getRegister() {
         $this->layout->content = View::make('users.register');
     }
-    public function getCom_register() {
+    public function postCom_register() {
      $ds = ldap_connect('ldap://10.4.3.4:389');
 		  if ($ds) {
     // bind with appropriate dn to give update access
@@ -92,6 +92,15 @@ class UsersController extends \BaseController {
 	// prepare data
 //    $info["OU"] = "TestingOU1";
     $info["objectclass"] = "organizationalUnit";
+        //search for existing OU
+        if(ldap_search($ds,"DC=nubeslab,DC=com","DC=nubeslab,DC=com",array("OU")))
+        {
+          echo "Exists";
+        }
+        else
+        {
+          echo "Possible Register";
+        }
 
     // add data to directory
     $r = ldap_add($ds, "OU=TestingOU1,DC=nubeslab,DC=com", $info);
@@ -101,7 +110,7 @@ class UsersController extends \BaseController {
       echo "Unable to connect to LDAP server";
       }
     }
-    public function getTempCom_register() {
+    public function getCom_register() {
         $this->layout->content = View::make('users.com_register');
     }
 
