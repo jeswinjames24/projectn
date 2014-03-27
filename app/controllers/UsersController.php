@@ -93,7 +93,7 @@ class UsersController extends \BaseController {
 //    $info["OU"] = "TestingOU1";
     $info["objectclass"] = "organizationalUnit";
         //search for existing OU
-        if(ldap_search($ds,"DC=nubeslab,DC=com","DC=nubeslab,DC=com",array("OU")))
+        if(ldap_search($ds,"DC=nubeslab,DC=com","OU=TestingOU",array("OU")))
         {
           echo "Exists";
         }
